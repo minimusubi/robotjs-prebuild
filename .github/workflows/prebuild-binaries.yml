@@ -12,6 +12,6 @@ jobs:
         with:
           python-version: '2.7.18'
       - run: npm install -g node-gyp
-      - run: npm install
       - run: node-gyp rebuild
+      - run: npm install
       - run: npm run prebuild
