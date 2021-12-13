@@ -7,7 +7,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get install libxtst-dev libpng++-dev
       - uses: actions/setup-python@v2
         with:
           python-version: '2.7.18'
