@@ -11,6 +11,6 @@ jobs:
           python-version: '2.7.18'
       - run: sudo apt-get install libxtst-dev libpng++-dev
       - run: npm install -g node-gyp
-      - run: node-gyp rebuild
       - run: npm install
+      - run: node-gyp rebuild
       - run: npm run prebuild
