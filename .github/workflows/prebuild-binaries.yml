@@ -1,0 +1,16 @@
+name: prebuild-binaries
+
+on: ["pull_request"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '2.7.0'
+      - run: sudo apt-get install libxtst-dev libpng++-dev
+      - run: npm install -g node-gyp
+      - run: node-gyp rebuild
+      - run: npm install
+      - run: npm run prebuild
