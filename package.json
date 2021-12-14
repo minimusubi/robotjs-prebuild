@@ -11,7 +11,7 @@
     "test:win32": "jasmine test/**/*.js",
     "install": "prebuild-install || node-gyp rebuild",
     "install-debug": "prebuild-install || node-gyp rebuild --debug",
-    "prebuild": "prebuild --all"
+    "prebuild": "prebuild -t 16.0.0 -r electron"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "tape": "^4.8.0",
     "jasmine": "^2.99.0",
-    "prebuild": "^9.1.1",
+    "prebuild": "^11.0.0",
     "run-script-os": "^1.0.3",
     "targetpractice": "0.0.7"
   }

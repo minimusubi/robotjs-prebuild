@@ -1,0 +1,16 @@
+name: prebuild-binaries
+
+on: pull_request
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install -g node-gyp
+      - run: npm install
+      - run: node-gyp rebuild
+      - run: npm run prebuild
