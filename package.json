@@ -1,6 +1,6 @@
 {
   "name": "@todesktop/robotjs-prebuild",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -9,12 +9,12 @@
     "test:darwin:linux": "jasmine test/**/*.js",
     "test-keyboard": "node test/keyboard.js",
     "test:win32": "jasmine test/**/*.js",
-    "install": "prebuild-install --runtime electron || node-gyp rebuild",
+    "install": "prebuild-install --debug --runtime electron || node-gyp rebuild",
     "install-debug": "prebuild-install || node-gyp rebuild --debug",
-    "prebuild": "prebuild -t 16.0.0 -r electron",
+    "prebuild": "prebuild --debug -t 16.0.2 -r electron",
     "release:minor": "npm version minor && npm publish",
-		"release:major": "npm version major && npm publish",
-		"publish": "npm publish"
+    "release:major": "npm version major && npm publish",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -46,13 +46,13 @@
   "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
   "dependencies": {
     "nan": "^2.14.2",
-    "prebuild-install": "^5.3.3"
+    "prebuild-install": "^7.0.0"
   },
   "devDependencies": {
-    "tape": "^4.8.0",
     "jasmine": "^2.99.0",
-    "prebuild": "^9.1.1",
+    "prebuild": "^11.0.0",
     "run-script-os": "^1.0.3",
+    "tape": "^4.8.0",
     "targetpractice": "0.0.7"
   }
 }
