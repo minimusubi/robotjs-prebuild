@@ -15,7 +15,11 @@ jobs:
         shell: pwsh
       - run: npm install
         shell: pwsh
-      - run: prebuild -r electron -t 16.0.0 -t 14.0.0 -t 12.0.0 -u $GH_TOKEN
+      - run: prebuild -r electron -t 14.0.0 -t 15.0.0 -t 16.0.0 -u $GH_TOKEN
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - run: prebuild -t 14.0.0 -t 15.0.0 -t 16.0.0 -u $GH_TOKEN
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }
