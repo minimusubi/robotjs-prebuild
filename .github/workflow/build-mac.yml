@@ -1,0 +1,15 @@
+name: build-mac
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install -g node-gyp
+      - run: node-gyp rebuild
+      - run: npm install
+      - run: npm run prebuild:mac:x64
+      - run: npm run prebuild:mac:arm64
+    
