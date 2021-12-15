@@ -11,7 +11,7 @@
     "test:win32": "jasmine test/**/*.js",
     "install": "prebuild-install --runtime electron || node-gyp rebuild",
     "install-debug": "prebuild-install || node-gyp rebuild --debug",
-    "prebuild": "prebuild -r electron -t 96 -t 97 -t 98 -t 99",
+    "prebuild": "prebuild -r electron -t 97 -t 98 -t 99",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
     "publish": "npm publish"

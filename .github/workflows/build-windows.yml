@@ -15,7 +15,7 @@ jobs:
         shell: pwsh
       - run: npm install windows-build-tools@4.0.0
         shell: pwsh
-      - run: prebuild -r electron -t 96 -t 97 -t 98 -t 99 -u $GH_TOKEN
+      - run: prebuild -r electron -t 97 -t 98 -t 99 -u $GH_TOKEN
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
