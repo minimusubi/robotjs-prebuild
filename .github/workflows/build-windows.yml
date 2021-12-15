@@ -4,11 +4,11 @@ on: push
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - run: npm install --global --production windows-build-tools
       - run: npm install -g node-gyp
       - run: npm install
       - run: node-gyp rebuild
-      - run: npm run prebuild:mac:x64
-      - run: npm run prebuild:mac:arm64
+      - run: npm run prebuild
