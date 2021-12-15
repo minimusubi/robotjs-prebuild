@@ -22,4 +22,4 @@ jobs:
       - run: prebuild -t 14.0.0 -t 15.0.0 -t 16.0.0 -u $GH_TOKEN
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
