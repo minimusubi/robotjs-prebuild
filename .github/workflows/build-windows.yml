@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v2
-      - run: npm install --verbose -g windows-build-tools
+      - run: npm install --verbose --global windows-build-tools@4.0.0
         shell: pwsh
       - run: npm install -g node-gyp
       - run: npm install -g prebuild
