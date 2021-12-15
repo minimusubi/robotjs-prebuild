@@ -12,7 +12,8 @@ jobs:
           python-version: '2.7.x'
       - run: sudo apt-get install libxtst-dev libpng++-dev
       - run: npm install -g node-gyp
+      - run: npm install -g prebuild
       - run: npm install
-      - run: npm run prebuild -u $GH_TOKEN
+      - run: prebuild -r electron -t 16.0.0 -t 14.0.0 -t 12.0.0 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

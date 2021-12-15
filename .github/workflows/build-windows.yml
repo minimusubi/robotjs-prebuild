@@ -7,9 +7,9 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v2
-      - run: npm install --global --production windows-build-tools
       - run: npm install -g node-gyp
+      - run: npm install -g prebuild
       - run: npm install
-      - run: npm run prebuild -u $GH_TOKEN
+      - run: prebuild -r electron -t 16.0.0 -t 14.0.0 -t 12.0.0 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
