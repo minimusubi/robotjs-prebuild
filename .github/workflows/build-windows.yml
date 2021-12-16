@@ -7,15 +7,12 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v2
-      - run: npm install --verbose --global windows-build-tools@4.0.0
+      - run: npm install --verbose --global --production windows-build-tools@4.0.0
         shell: pwsh
       - run: npm install --verbose -g node-gyp
         shell: pwsh
       - run: npm install -g prebuild
         shell: pwsh
-      - run: npm config get msvs_version
-      - run: npm config set msvs_version 2017 --global
-      - run: npm config get msvs_version
       - run: npm install
         shell: pwsh
       - run: prebuild -r electron -t 97 -t 98 -t 99 -u $GH_TOKEN
