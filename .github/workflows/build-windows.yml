@@ -13,7 +13,10 @@ jobs:
         shell: pwsh
       - run: npm install -g prebuild
         shell: pwsh
-      - run: npm install windows-build-tools@4.0.0
+      - run: npm config get msvs_version
+      - run: npm config set msvs_version 2017 --global
+      - run: npm config get msvs_version
+      - run: npm install
         shell: pwsh
       - run: prebuild -r electron -t 97 -t 98 -t 99 -u $GH_TOKEN
         shell: pwsh
