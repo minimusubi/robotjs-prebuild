@@ -1,0 +1,22 @@
+name: build-linux
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '2.7.x'
+      - run: sudo apt-get install libxtst-dev libpng++-dev
+      - run: npm install -g node-gyp
+      - run: npm install -g prebuild
+      - run: npm install
+      - run: prebuild -r electron -t 97 -t 98 -t 99 -u $GH_TOKEN
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
