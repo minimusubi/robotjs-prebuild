@@ -8,15 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: choco install python visualstudio2017-workload-vctools -y
-        shell: pwsh
       - run: npm config set msvs_version 2017 --global
-        shell: pwsh
       - run: npm install --verbose -g node-gyp
-        shell: pwsh
       - run: npm install -g prebuild
-        shell: pwsh
       - run: npm install
-        shell: pwsh
       - run: prebuild -r electron -t 97 -t 98 -t 99 -u ${env:GH_TOKEN}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
