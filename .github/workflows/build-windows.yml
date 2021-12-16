@@ -1,6 +1,9 @@
 name: build-windows
 
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -14,4 +17,4 @@ jobs:
       - run: npm install
       - run: prebuild -r electron -t 97 -t 98 -t 99 -u ${env:GH_TOKEN}
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}     
