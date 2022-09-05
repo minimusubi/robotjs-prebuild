@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
   "dependencies": {
-    "nan": "^2.14.2",
+    "nan": "^2.16.0",
     "prebuild-install": "^7.0.0"
   },
   "devDependencies": {
