@@ -13,9 +13,9 @@ jobs:
       - run: npm install -g node-gyp
       - run: npm install -g prebuild
       - run: npm install
-      - run: prebuild -r electron -t 97 -t 98 -t 99 --arch x64 -u $GH_TOKEN
+      - run: prebuild -r electron -t 97 -t 98 -t 99 -t 100 -t 101 -t 102 -t 103 -t 104 --arch x64 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: prebuild -r electron -t 97 -t 98 -t 99 --arch arm64 -u $GH_TOKEN
+      - run: prebuild -r electron -t 97 -t 98 -t 99 -t 100 -t 101 -t 102 -t 103 -t 104 --arch arm64 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
