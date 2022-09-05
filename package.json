@@ -49,6 +49,7 @@
     "prebuild-install": "^7.0.0"
   },
   "devDependencies": {
+    "electron-rebuild": "^3.2.9",
     "jasmine": "^2.99.0",
     "prebuild": "^11.0.0",
     "run-script-os": "^1.0.3",
