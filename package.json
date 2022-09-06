@@ -55,6 +55,7 @@
     "prebuild": "^11.0.4"
   },
   "overrides": {
-    "node-gyp": "^9.1.0"
+    "node-gyp": "^9.1.0",
+    "prebuild": "^11.0.4"
   }
 }
