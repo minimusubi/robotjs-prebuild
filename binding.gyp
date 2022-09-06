@@ -7,7 +7,7 @@
         ],
         'cflags_cc': [
             '-std=c++17',
-            '-fno-rtti', 
+            '-fno-rtti',
             '-fno-exceptions',
         ],
         'cflags': [
@@ -54,7 +54,12 @@
             }],
 
             ["OS=='win'", {
-                'defines': ['IS_WINDOWS']
+                'defines': ['IS_WINDOWS'],
+                "msvs_settings": {
+                    "VCCLCompilerTool": {
+                        "AdditionalOptions": ["-std:c++17", ],
+                    },
+                },
             }]
         ],
 
