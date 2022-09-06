@@ -14,7 +14,7 @@ jobs:
       - run: npm --version
       - run: npm install -g node-gyp
       - run: npm install -g prebuild
-      - run: npm install
+      - run: npm install --loglevel verbose
       - run: prebuild -r electron -t 101 -t 103 -t 106 -t 107 --arch x64 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

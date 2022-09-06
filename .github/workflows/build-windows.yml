@@ -15,7 +15,7 @@ jobs:
       - run: npm config set msvs_version 2017 --global
       - run: npm install --verbose -g node-gyp
       - run: npm install -g prebuild
-      - run: npm install
+      - run: npm install --loglevel verbose
       - run: prebuild -r electron -t 101 -t 103 -t 106 -t 107 -u ${env:GH_TOKEN}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}     
