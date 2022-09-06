@@ -54,8 +54,7 @@
     "prebuild": "^11.0.4",
     "node-gyp": "^9.1.0",
     "run-script-os": "^1.0.3",
-    "tape": "^4.8.0",
-    "targetpractice": "0.0.7"
+    "tape": "^4.8.0"
   },
   "overrides": {
     "prebuild": {
