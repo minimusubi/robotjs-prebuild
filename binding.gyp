@@ -55,11 +55,11 @@
 
             ["OS=='win'", {
                 'defines': ['IS_WINDOWS'],
-                "msvs_settings": {
-                    "VCCLCompilerTool": {
-                        "AdditionalOptions": ["-std:c++17", ],
-                    },
-                },
+                "msbuild_settings": {
+                    "ClCompile": {
+                        "LanguageStandard": "stdcpp17"
+                    }
+                }
             }]
         ],
 
