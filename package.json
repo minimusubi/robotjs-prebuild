@@ -14,7 +14,8 @@
     "prebuild": "prebuild -r electron -t 101 -t 103 -t 106 -t 107 --debug",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "publish": "npm publish"
+    "publish": "npm publish",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
   "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
   "dependencies": {
     "nan": "^2.16.0",
+    "patch-package": "^6.4.7",
     "prebuild-install": "^7.1.1"
   },
   "devDependencies": {
