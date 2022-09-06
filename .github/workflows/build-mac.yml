@@ -11,6 +11,7 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
+      - run: npm --version
       - run: npm install -g node-gyp
       - run: npm install -g prebuild
       - run: npm install
