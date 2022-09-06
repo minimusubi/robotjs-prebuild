@@ -6,6 +6,7 @@
             "<!(node -e \"require('nan')\")",
         ],
         'cflags': [
+            '-std=c++17',
             '-Wall',
             '-Wparentheses',
             '-Winline',
