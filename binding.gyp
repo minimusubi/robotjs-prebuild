@@ -7,6 +7,7 @@
         ],
         'cflags': [
             '-std=c++17',
+            "-stdlib=libc++",
             '-Wall',
             '-Wparentheses',
             '-Winline',
