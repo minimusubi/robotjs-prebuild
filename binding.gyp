@@ -5,9 +5,12 @@
             "<!(node -p \"require('node-addon-api').include_dir\")",
             "<!(node -e \"require('nan')\")",
         ],
-        'cflags': [
+        'cflags_cc': [
             '-std=c++17',
-            "-stdlib=libc++",
+            '-fno-rtti', 
+            '-fno-exceptions',
+        ],
+        'cflags': [
             '-Wall',
             '-Wparentheses',
             '-Winline',
