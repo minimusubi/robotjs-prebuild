@@ -19,6 +19,6 @@ jobs:
       - run: sudo apt-get install libxtst-dev libpng++-dev gcc-7 g++-7 -y
       - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
       - run: npm install --loglevel verbose
-      - run: npm run prebuild -u $GH_TOKEN
+      - run: npm run prebuild -- -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

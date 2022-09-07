@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm --version
       - run: npm install --loglevel verbose
-      - run: npm run prebuild --arch x64 -u $GH_TOKEN
+      - run: npm run prebuild -- --arch x64 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: npm run prebuild --arch arm64 -u $GH_TOKEN
+      - run: npm run prebuild -- --arch arm64 -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
