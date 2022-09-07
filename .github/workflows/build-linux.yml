@@ -13,10 +13,11 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '2.7.x'
-      - run: sudo apt-get install libxtst-dev libpng++-dev
-      - run: npm install -g node-gyp
-      - run: npm install -g prebuild
-      - run: npm install
-      - run: prebuild -r electron -t 97 -t 98 -t 99 -u $GH_TOKEN
+      - run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+      - run: sudo apt-get update
+      - run: sudo apt-get install libxtst-dev libpng++-dev gcc-7 g++-7 -y
+      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+      - run: npm install --loglevel verbose
+      - run: npm run prebuild -- -u $GH_TOKEN
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
