@@ -1,6 +1,6 @@
 {
   "name": "@todesktop/robotjs-prebuild",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -9,7 +9,7 @@
     "test:darwin:linux": "jasmine test/**/*.js",
     "test-keyboard": "node test/keyboard.js",
     "test:win32": "jasmine test/**/*.js",
-    "install": "prebuild-install --runtime electron || node-gyp rebuild",
+    "install": "prebuild-install --debug --runtime electron || node-gyp rebuild",
     "install-debug": "prebuild-install --debug || node-gyp rebuild --debug",
     "prebuild": "prebuild -r electron -t 101 -t 103 -t 106 -t 107 --debug",
     "release:minor": "npm version minor && npm publish",
