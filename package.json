@@ -1,6 +1,6 @@
 {
   "name": "@todesktop/robotjs-prebuild",
-  "version": "0.6.6",
+  "version": "0.6.5",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -14,7 +14,8 @@
     "prebuild": "prebuild -r electron -t 101 -t 103 -t 106 -t 107 --debug",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "publish": "npm publish"
+    "publish": "npm publish",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
   "dependencies": {
     "nan": "^2.16.0",
     "node-addon-api": "^5.0.0",
+    "patch-package": "^6.4.7",
     "prebuild-install": "^7.1.1"
   },
   "devDependencies": {
@@ -58,8 +60,5 @@
   "overrides": {
     "node-gyp": "^9.1.0",
     "prebuild": "^11.0.4"
-  },
-  "resolutions": {
-    "nan": "github:jkleinsc/nan#remove_accessor_signature"
   }
 }
