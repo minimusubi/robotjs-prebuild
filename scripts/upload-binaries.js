@@ -109,9 +109,8 @@ async function uploadReleaseArtifacts({
       },
     });
   } catch (err) {
-    console.log(err.code);
     console.log(err.status);
-    if (err.status !== "already_exists") {
+    if (err.status !== 422) {
       console.log(err);
       throw err;
     }
