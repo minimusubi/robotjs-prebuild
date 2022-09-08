@@ -81,7 +81,7 @@ async function createRelease({ github, context, manifest, tag }) {
     owner: context.repo.owner,
     repo: context.repo.repo,
     tag_name: tag,
-    name: manifest.name,
+    name: tag,
     body: manifest.name,
   });
 }
@@ -91,7 +91,7 @@ async function updateRelease({ github, context, manifest, release }) {
     owner: context.repo.owner,
     repo: context.repo.repo,
     release_id: release.data.id,
-    name: manifest.name,
+    name: tag,
     body: manifest.name,
   });
 }
