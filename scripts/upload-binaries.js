@@ -86,7 +86,7 @@ async function createRelease({ github, context, manifest, tag }) {
   });
 }
 
-async function updateRelease({ github, context, manifest, release }) {
+async function updateRelease({ github, context, manifest, release, tag }) {
   return await github.rest.repos.updateRelease({
     owner: context.repo.owner,
     repo: context.repo.repo,
