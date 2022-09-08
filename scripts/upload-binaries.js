@@ -17,20 +17,18 @@ module.exports = async (props) => {
   if (release) {
     release = await updateRelease({
       ...props,
-      plugin,
       manifest,
       release,
       tag,
     });
     console.log("✅ updated release", release.data.name);
   } else {
-    release = await createRelease({ ...props, plugin, manifest, tag });
+    release = await createRelease({ ...props, manifest, tag });
     console.log("✅ created release", release.data.name);
   }
 
   const uploaded = await uploadReleaseArtifacts({
     ...props,
-    plugin,
     tag,
     release,
     artifactsZip,
@@ -78,13 +76,13 @@ async function getRelease({ github, context, tag }) {
   }
 }
 
-async function createRelease({ github, context, plugin, manifest, tag }) {
+async function createRelease({ github, context, manifest, tag }) {
   return await github.rest.repos.createRelease({
     owner: context.repo.owner,
     repo: context.repo.repo,
-    tag_name: plugin,
+    tag_name: tag,
     name: manifest.name,
-    body: tag,
+    body: manifest.name,
   });
 }
 
@@ -94,7 +92,7 @@ async function updateRelease({ github, context, manifest, release }) {
     repo: context.repo.repo,
     release_id: release.data.id,
     name: manifest.name,
-    body: tag,
+    body: manifest.name,
   });
 }
 
