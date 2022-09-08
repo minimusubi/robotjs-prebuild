@@ -44,7 +44,7 @@ async function parseManifest() {
   const packageJson = fs.readFileSync(rootDir);
 
   const manifest = JSON.parse(packageJson);
-  const tag = `${process.platform}-${process.arch}-${manifest.version}`;
+  const tag = `${process.platform}-${manifest.version}`;
   return { manifest, tag };
 }
 

@@ -18,6 +18,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: upload binaries
         uses: actions/github-script@v6
+        shell: bash
         with:
           script: |
             const script = require('./scripts/upload-binaries.js');
