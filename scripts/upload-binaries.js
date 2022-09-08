@@ -34,7 +34,7 @@ module.exports = async (props) => {
     artifactsZip,
   });
   console.log(
-    "✅ uploaded release artifacts",
+    "✅ finished releasing artifacts",
     uploaded.data.browser_download_url
   );
 };
@@ -105,14 +105,23 @@ async function uploadReleaseArtifacts({
 }) {
   const data = fs.readFileSync(artifactsZip);
 
-  return await github.rest.repos.uploadReleaseAsset({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    release_id: release.data.id,
-    name: `${tag}.zip`,
-    data,
-    headers: {
-      accept: "application/zip",
-    },
-  });
+  try {
+    return await github.rest.repos.uploadReleaseAsset({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      release_id: release.data.id,
+      name: `${tag}.zip`,
+      data,
+      headers: {
+        accept: "application/zip",
+      },
+    });
+  } catch (err) {
+    console.log(err.code);
+    if (err.code !== "already_exists") {
+      console.log(err);
+      throw err;
+    }
+    console.log(`ℹ️ upload already exists `);
+  }
 }
