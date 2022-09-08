@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: windows-2022
@@ -18,7 +22,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: upload binaries
         uses: actions/github-script@v6
-        shell: bash
         with:
           script: |
             const script = require('./scripts/upload-binaries.js');
