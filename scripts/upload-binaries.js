@@ -27,16 +27,14 @@ module.exports = async (props) => {
     console.log("✅ created release", release.data.name);
   }
 
-  const uploaded = await uploadReleaseArtifacts({
+  await uploadReleaseArtifacts({
     ...props,
     tag,
     release,
     artifactsZip,
   });
-  console.log(
-    "✅ finished releasing artifacts",
-    uploaded.data.browser_download_url
-  );
+
+  console.log("✅ finished releasing artifacts");
 };
 
 async function parseManifest() {
