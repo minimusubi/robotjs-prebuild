@@ -46,6 +46,7 @@
   },
   "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
   "dependencies": {
+    "cross-zip": "^4.0.0",
     "nan": "^2.16.0",
     "node-addon-api": "^5.0.0",
     "node-gyp-build": "^4.5.0",

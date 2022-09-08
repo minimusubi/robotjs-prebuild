@@ -22,9 +22,13 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const zip = require('cross-zip')
+            
             const script = require('./scripts/upload-binaries.js');
+
             await script({
               github,
               context,
-              core
-            });
+              core,
+              zip
+            }); 

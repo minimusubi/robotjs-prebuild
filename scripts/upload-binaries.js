@@ -48,20 +48,12 @@ async function parseManifest() {
   return { manifest, tag };
 }
 
-async function prepareArtifacts({ prebuildsDir, tag }) {
+async function prepareArtifacts({ prebuildsDir, tag, zip }) {
   const artifactsZip = `${tag}.zip`;
-  await execScript(`cd ${prebuildsDir} && zip -r ${artifactsZip} ./`);
-  return path.join(prebuildsDir, artifactsZip);
-}
+  const zipDir = path.join(prebuildsDir, artifactsZip);
+  zip.zipSync(prebuildsDir, zipDir);
 
-async function execScript(script) {
-  return new Promise((resolve, reject) => {
-    return exec(script, (err, stdout, stderr) => {
-      if (err || stderr) return reject(err || new Error(`❌ ${stderr}`));
-      console.log(stdout);
-      resolve(stdout);
-    });
-  });
+  return zipDir;
 }
 
 async function getRelease({ github, context, tag }) {
