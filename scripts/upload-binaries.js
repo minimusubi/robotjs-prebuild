@@ -49,9 +49,23 @@ async function parseManifest() {
 async function prepareArtifacts({ prebuildsDir, tag, zip }) {
   const artifactsZip = `${tag}.zip`;
   const zipDir = path.join(prebuildsDir, artifactsZip);
-  zip.zipSync(prebuildsDir, zipDir);
 
+  if (process.platform === "win32") {
+    await execScript(`mkdir ${zipDir}`);
+  }
+
+  zip.zipSync(prebuildsDir, zipDir);
   return zipDir;
+}
+
+async function execScript(script) {
+  return new Promise((resolve, reject) => {
+    return exec(script, (err, stdout, stderr) => {
+      if (err || stderr) return reject(err || new Error(`❌ ${stderr}`));
+      console.log(stdout);
+      resolve(stdout);
+    });
+  });
 }
 
 async function getRelease({ github, context, tag }) {

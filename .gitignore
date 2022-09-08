@@ -1,5 +1,4 @@
 build/
 node_modules/
-prebuilds/
 /.idea
 .DS_Store
