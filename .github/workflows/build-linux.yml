@@ -29,6 +29,5 @@ jobs:
             await script({
               github,
               context,
-              core,
-              changedFiles: ${{ steps.output-changed-files.outputs.all }}
+              core
             });
