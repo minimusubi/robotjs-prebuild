@@ -15,4 +15,15 @@ jobs:
       - run: npm install --loglevel verbose
       - run: npm run prebuild
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}     
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: upload binaries
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const script = require('./scripts/upload-binaries.js');
+            await script({
+              github,
+              context,
+              core,
+              changedFiles: ${{ steps.output-changed-files.outputs.all }}
+            }); 
