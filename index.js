@@ -1,5 +1,7 @@
 var robotjs = require('node-gyp-build')(__dirname)
 
+console.log(robotjs);
+
 module.exports = robotjs;
 
 module.exports.screen = {};

@@ -10,12 +10,12 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g pnpm
-      - run: pnpm install
-      - run: pnpm run prebuild --arch x64
+      - run: npm --version
+      - run: npm install --loglevel verbose
+      - run: npm run prebuild -- --arch x64
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: pnpm run prebuild --arch arm64
+      - run: npm run prebuild -- --arch arm64
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: upload binaries

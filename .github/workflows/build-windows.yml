@@ -11,10 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: choco install python visualstudio2017-workload-vctools -y
-      - run: npm install -g pnpm
-      - run: pnpm config set msvs_version 2017 --global
-      - run: pnpm install
-      - run: pnpm run prebuild
+      - run: npm config set msvs_version 2017 --global
+      - run: npm install
+      - run: npm run prebuild
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: upload binaries

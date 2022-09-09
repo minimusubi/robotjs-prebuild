@@ -1,7 +1,7 @@
-diff --git a/nan.h b/nan.h
-index 9e7c59e488497c4d6b93af69176b08385565745b..0326246aa9a308b57f719f7334c24170b9dd930c 100644
---- a/nan.h
-+++ b/nan.h
+diff --git a/node_modules/nan/nan.h b/node_modules/nan/nan.h
+index 9e7c59e..0326246 100644
+--- a/node_modules/nan/nan.h
++++ b/node_modules/nan/nan.h
 @@ -2516,8 +2516,7 @@ inline void SetAccessor(
    , SetterCallback setter = 0
    , v8::Local<v8::Value> data = v8::Local<v8::Value>()
@@ -22,10 +22,10 @@ index 9e7c59e488497c4d6b93af69176b08385565745b..0326246aa9a308b57f719f7334c24170
    );
  }
  
-diff --git a/nan_callbacks.h b/nan_callbacks.h
-index 53ede846ac9a865a737218dabbbd48305d3d6b63..85b2ca8c7da2fa332d35b90b775fbc14010601a1 100644
---- a/nan_callbacks.h
-+++ b/nan_callbacks.h
+diff --git a/node_modules/nan/nan_callbacks.h b/node_modules/nan/nan_callbacks.h
+index 53ede84..85b2ca8 100644
+--- a/node_modules/nan/nan_callbacks.h
++++ b/node_modules/nan/nan_callbacks.h
 @@ -52,7 +52,6 @@ typedef void(*IndexQueryCallback)(
      const PropertyCallbackInfo<v8::Integer>&);
  
