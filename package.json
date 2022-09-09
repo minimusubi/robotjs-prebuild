@@ -1,6 +1,6 @@
 {
   "name": "@todesktop/robotjs-prebuild",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -14,8 +14,7 @@
     "prebuild": "prebuildify --target -t node@14.0.0 -t node@15.0.0 -t node@16.0.0 -t node@18.0.0 -t electron@17.0.0 -t electron@18.0.0 -t electron@19.0.0 -t electron@20.0.0",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "publish": "npm publish",
-    "postinstall": "patch-package"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -47,7 +46,7 @@
   "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
   "dependencies": {
     "cross-zip": "^4.0.0",
-    "nan": "^2.16.0",
+    "@todesktop/nan": "^2.17.0",
     "node-addon-api": "^5.0.0",
     "node-gyp-build": "^4.5.0",
     "patch-package": "^6.4.7",
@@ -60,10 +59,5 @@
   },
   "overrides": {
     "node-gyp": "^9.1.0"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "nan@2.16.0": "patches/nan@2.16.0.patch"
-    }
   }
 }
