@@ -15,8 +15,8 @@ jobs:
           python-version: '2.7.x'
       - run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
       - run: sudo apt-get update
-      - run: sudo apt-get install libxtst-dev libpng++-dev gcc-7 g++-7 -y
-      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+      - run: sudo apt-get install libxtst-dev libpng++-dev gcc-11 g++-11 -y
+      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 70 --slave /usr/bin/g++ g++ /usr/bin/g++-11
       - run: npm install --loglevel verbose
       - run: npm run prebuild
         env:
