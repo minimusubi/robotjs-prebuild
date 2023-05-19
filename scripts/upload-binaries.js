@@ -117,7 +117,7 @@ async function uploadReleaseArtifacts({
       name: `${tag}.zip`,
       data,
       headers: {
-        accept: "application/zip",
+        "Content-Type": "application/zip",
       },
     });
   } catch (err) {
