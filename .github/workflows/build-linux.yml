@@ -1,6 +1,6 @@
 name: build-linux
 
-on: 
+on:
   push:
     branches:
       - master
@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: MatteoH2O1999/setup-python@v1
         with:
-          python-version: '2.7.x'
+          python-version: "2.7.x"
       - run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
       - run: sudo apt-get update
       - run: sudo apt-get install libxtst-dev libpng++-dev gcc-11 g++-11 -y
@@ -26,7 +26,7 @@ jobs:
         with:
           script: |
             const zip = require('cross-zip')
-            
+
             const script = require('./scripts/upload-binaries.js');
 
             await script({
@@ -34,4 +34,4 @@ jobs:
               context,
               core,
               zip
-            }); 
+            });
