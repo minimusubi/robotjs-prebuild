@@ -1,6 +1,6 @@
 name: build-windows
 
-on: 
+on:
   push:
     branches:
       - master
@@ -10,7 +10,8 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v3
-      - run: choco upgrade nodejs.install
+      # - run: choco upgrade nodejs.install
+      # - run: choco install nodejs --version 20.0.0
       - run: choco install python visualstudio2017-workload-vctools -y
       - run: npm install
       - run: npm run prebuild
@@ -21,7 +22,7 @@ jobs:
         with:
           script: |
             const zip = require('cross-zip')
-            
+
             const script = require('./scripts/upload-binaries.js');
 
             await script({
@@ -29,4 +30,4 @@ jobs:
               context,
               core,
               zip
-            }); 
+            });
