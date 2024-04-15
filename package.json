@@ -1,6 +1,6 @@
 {
-  "name": "@todesktop/robotjs-prebuild",
-  "version": "0.6.18",
+  "name": "@minimusubi/robotjs-prebuild",
+  "version": "0.6.19",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -11,14 +11,14 @@
     "test:win32": "jasmine test/**/*.js",
     "install": "node-gyp-build",
     "install-debug": "prebuild-install --verbose || node-gyp rebuild --debug",
-    "prebuild": "prebuildify --target -t node@15.0.0 -t node@16.0.0 -t node@18.0.0 -t node@20.0.0 -t electron@23.0.0  -t electron@24.0.0  -t electron@25.0.0  -t electron@26.0.0 -t electron@27.0.0",
+    "prebuild": "prebuildify --target -t node@15.0.0 -t node@16.0.0 -t node@18.0.0 -t node@20.0.0 -t electron@23.0.0  -t electron@24.0.0  -t electron@25.0.0  -t electron@26.0.0 -t electron@27.0.0 -t electron@28.0.0  -t electron@29.0.0",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
     "publish": "npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ToDesktop/robotjs-prebuild.git"
+    "url": "https://github.com/minimusubi/robotjs-prebuild.git"
   },
   "keywords": [
     "Automation",
@@ -41,9 +41,9 @@
   "license": "MIT",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/ToDesktop/robotjs-prebuild/issues"
+    "url": "https://github.com/minimusubi/robotjs-prebuild/issues"
   },
-  "homepage": "https://github.com/ToDesktop/robotjs-prebuild",
+  "homepage": "https://github.com/minimusubi/robotjs-prebuild",
   "dependencies": {
     "@todesktop/nan": "^2.17.0",
     "cross-zip": "^4.0.0",
