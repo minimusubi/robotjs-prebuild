@@ -48,14 +48,14 @@
     "@todesktop/nan": "^2.17.0",
     "cross-zip": "^4.0.0",
     "node-addon-api": "^5.0.0",
-    "node-gyp-build": "^4.5.0",
+    "node-gyp-build": "^4.8.0",
     "patch-package": "^6.4.7",
-    "prebuildify": "^5.0.1"
+    "prebuildify": "^6.0.1"
   },
   "devDependencies": {
-    "electron": "^21.0.0",
+    "electron": "^29.3.0",
     "electron-rebuild": "^3.2.9",
-    "node-abi": "^3.47.0",
+    "node-abi": "^3.57.0",
     "node-gyp": "^9.1.0"
   },
   "overrides": {
